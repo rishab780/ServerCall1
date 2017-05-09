@@ -11,6 +11,17 @@ import com.google.gson.annotations.SerializedName;
 
 public class UserInfo implements Parcelable {
 
+    public static final Creator<UserInfo> CREATOR = new Creator<UserInfo>() {
+        @Override
+        public UserInfo createFromParcel(final Parcel in) {
+            return new UserInfo(in);
+        }
+
+        @Override
+        public UserInfo[] newArray(final int size) {
+            return new UserInfo[size];
+        }
+    };
 
     @SerializedName("id")
     private int id;
@@ -29,7 +40,11 @@ public class UserInfo implements Parcelable {
     @SerializedName("company")
     private Company company;
 
-    protected UserInfo(Parcel in) {
+    /**
+     *
+     * @param in input parcel
+     */
+    protected UserInfo(final Parcel in) {
         id = in.readInt();
         name = in.readString();
         username = in.readString();
@@ -38,17 +53,6 @@ public class UserInfo implements Parcelable {
         website = in.readString();
     }
 
-    public static final Creator<UserInfo> CREATOR = new Creator<UserInfo>() {
-        @Override
-        public UserInfo createFromParcel(Parcel in) {
-            return new UserInfo(in);
-        }
-
-        @Override
-        public UserInfo[] newArray(int size) {
-            return new UserInfo[size];
-        }
-    };
 
     /**
      *

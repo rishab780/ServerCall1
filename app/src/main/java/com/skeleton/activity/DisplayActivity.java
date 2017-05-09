@@ -39,7 +39,7 @@ public class DisplayActivity extends AppCompatActivity {
 
             @Override
             public void failure(final APIError error) {
-                Toast.makeText(DisplayActivity.this,"failed!" , Toast.LENGTH_LONG).show();
+                Toast.makeText(DisplayActivity.this, "failed!", Toast.LENGTH_LONG).show();
             }
         });
     }

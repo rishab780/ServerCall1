@@ -17,35 +17,72 @@ public class Posts {
     @SerializedName("body")
     private String body;
 
+    /**
+     *
+     * @return id
+     */
     public int getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    /**
+     *
+     * @param userId id
+     */
+    public void setUserId(final int userId) {
         this.userId = userId;
     }
 
+    /**
+     *
+     * @return id
+     */
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
+    /**
+     *
+     * @param id id
+     */
+
+    public void setId(final int id) {
         this.id = id;
     }
+
+    /**
+     *
+     * @return id
+     */
 
     public String getTitle() {
         return title;
     }
 
-    public void setTitle(String title) {
+    /**
+     *
+     * @param title title
+     */
+
+    public void setTitle(final String title) {
         this.title = title;
     }
+
+    /**
+     *
+     * @return title
+     */
 
     public String getBody() {
         return body;
     }
 
-    public void setBody(String body) {
+    /**
+     *
+     * @param body body
+     */
+
+    public void setBody(final String body) {
         this.body = body;
     }
 }

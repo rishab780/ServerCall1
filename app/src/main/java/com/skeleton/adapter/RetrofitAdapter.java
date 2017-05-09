@@ -1,6 +1,6 @@
 package com.skeleton.adapter;
 
-import android.app.Activity;
+
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -9,7 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+
 import android.widget.TextView;
 
 import com.skeleton.R;
@@ -19,9 +19,7 @@ import com.skeleton.model.UserInfo;
 
 import java.util.List;
 
-import static android.R.attr.id;
-import static android.R.attr.mode;
-import static android.icu.lang.UCharacter.GraphemeClusterBreak.V;
+
 
 /**
  * Created by Rishab on 06-05-2017.
@@ -32,6 +30,11 @@ public class RetrofitAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     private Context mContext;
     private int mMode;
 
+    /**
+     *
+     * @param mUserInfo list
+     * @param mContext context
+     */
     public RetrofitAdapter(final List<UserInfo> mUserInfo, final Context mContext) {
         this.mUserInfo = mUserInfo;
         this.mContext = mContext;
@@ -59,10 +62,17 @@ public class RetrofitAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         return mUserInfo.size();
     }
 
+    /**
+     * abc
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mName;
         private TextView mId;
 
+        /**
+         *
+         * @param itemView itemview
+         */
 
         public ViewHolder(final View itemView) {
             super(itemView);

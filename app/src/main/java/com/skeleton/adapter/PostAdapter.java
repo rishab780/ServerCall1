@@ -9,12 +9,11 @@ import android.widget.TextView;
 
 import com.skeleton.R;
 import com.skeleton.model.Posts;
-import com.skeleton.model.UserInfo;
-import com.skeleton.retrofit.ResponseResolver;
+
 
 import java.util.List;
 
-import static android.media.CamcorderProfile.get;
+
 
 /**
  * Created by Rishab on 08-05-2017.
@@ -25,6 +24,12 @@ public class PostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private Context mContext;
     private int mID;
 
+    /**
+     *
+     * @param posts posts list
+     * @param mContext context of activity
+     * @param mID id
+     */
     public PostAdapter(final List<Posts> posts, final Context mContext, final int mID) {
         this.posts = posts;
         this.mContext = mContext;
@@ -43,7 +48,7 @@ public class PostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
         Posts currentUser = posts.get(position);
-        if(mID == currentUser.getUserId()){
+        if (mID == currentUser.getUserId()) {
             viewHolder.mId.setText(String.valueOf(currentUser.getId()));
             viewHolder.mTitle.setText(currentUser.getTitle());
             viewHolder.mDescribe.setText(currentUser.getBody());
@@ -57,12 +62,18 @@ public class PostAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return posts.size();
     }
 
+    /**
+     * abc
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mTitle;
         private TextView mId;
         private TextView mDescribe;
 
-
+        /**
+         *
+         * @param itemView itemview
+         */
         public ViewHolder(final View itemView) {
             super(itemView);
             mDescribe = (TextView) itemView.findViewById(R.id.user_describe);

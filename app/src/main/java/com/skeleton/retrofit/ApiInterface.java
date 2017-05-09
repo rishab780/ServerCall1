@@ -93,6 +93,12 @@ public interface ApiInterface {
      */
     @GET(SUBURL)
     Call<List<UserInfo>> getUserData();
+
+    /**
+     *
+     * @param userId userid
+     * @return returns list
+     */
     @GET(SUBURL_POSTS)
     Call<List<Posts>> getPosts(@Query("userId") int userId);
 }

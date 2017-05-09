@@ -2,7 +2,7 @@ package com.skeleton.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
+
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -23,7 +23,7 @@ public class BelowFragment extends Fragment {
 
     private TextView mId;
     private TextView mName;
-    private Button button_post;
+    private Button buttonpost;
     private Intent intent;
 
     @Nullable
@@ -37,12 +37,12 @@ public class BelowFragment extends Fragment {
         mId.setText(String.valueOf(obj.getId()));
         mName.setText(obj.getName());
 
-        button_post = (Button) rootView.findViewById(R.id.btn_posts);
-        button_post.setOnClickListener(new View.OnClickListener() {
+        buttonpost = (Button) rootView.findViewById(R.id.btn_posts);
+        buttonpost.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
                 intent = new Intent(getContext(), PostActivity.class);
-                intent.putExtra("id",bundle);
+                intent.putExtra("id", bundle);
                 startActivity(intent);
             }
 
@@ -51,7 +51,12 @@ public class BelowFragment extends Fragment {
 
     }
 
-    private void init(View view) {
+    /**
+     *
+     * @param view view
+     */
+
+    private void init(final View view) {
         mId = (TextView) view.findViewById(R.id.user_id);
         mName = (TextView) view.findViewById(R.id.user_name);
     }
